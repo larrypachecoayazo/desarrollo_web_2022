@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetación con Flexbox</title>
+    <style>
+        header{
+            background-color: yellow;
+            text-align: center;
+            padding: 50px;
+        }
+        nav{
+            display: flex;
+            justify-content: flex-end;
+            background-color: antiquewhite;
+        }
+        nav > div{
+            padding: 5px;
+            background-color: tomato;
+            margin: 5px;
+            color: white;
+        }
+        .wrap{
+            background-color: darkolivegreen;
+            display: flex;
+        }
+        aside{
+            background-color: aliceblue;
+            flex-grow: 3;
+            padding: 20px;
+        }
+        main{
+            background-color: bisque;
+            flex-grow: 9;
+            height: 400px;
+            padding: 20px;
+        }
+        footer{
+            padding: 20px;
+            background-color: darkseagreen;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Encabezado
+    </header>
+    <nav>
+        <div>Inicio</div>
+        <div>HTML</div>
+        <div>CSS</div>
+        <div>Flexbox</div>
+        <div>JavaScript</div>
+    </nav>
+    <div class="wrap">
+        <aside>
+            <h4>Menu principal</h4>
+            <div>
+                <div>Opción 1</div>
+                <div>Opción 2</div>
+                <div>Opción 3</div>
+                <div>Opción 4</div>
+                <div>Opción 5</div>
+            </div>
+        </aside>
+        <main>
+            <h4>contenido de la página</h4>
+        </main>
+    </div>
+    <footer>
+        Desarrollo Web - Flexbox 2022
+    </footer>
+</body>
+</html>

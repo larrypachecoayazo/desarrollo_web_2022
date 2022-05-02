@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flexbox Ejemplo 1</title>
+	<style type="text/css">
+
+		@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+
+		h1, h2, h3{
+			font-family: 'Ubuntu', sans-serif;
+		}
+		.item{
+			background-color: #aef783;
+			margin: 5px;
+			padding: 10px;
+			font-size: 22px;
+			text-align: center;
+			color: white;
+			font-family:  'Ubuntu', sans-serif;
+			/* font-family: 'Titillium Web', sans-serif; */
+			font-weight: bold
+		}
+	</style>
+</head>
+<body>
+
+<h1>Flexbox: Propiedades para el padre</h1>
+<hr>
+
+
+
+
+<style type="text/css">
+	.contenedor1{
+		display: flex;
+	}
+	.contenedor2{
+		display: flex; 
+		flex-direction: column;
+	}
+	.ancho-md{
+		width: 200px;
+	}
+	.oro{
+		background-color: gold;
+	}
+	.item-sin-flex{
+		background-color: #aef783;
+		margin: 5px;
+		padding: 10px;
+		font-size: 22px;
+		text-align: center;
+		color: white;
+		font-family:  'Ubuntu', sans-serif;
+		font-weight: bold
+	}
+
+</style>
+
+<h3>Sin display: flex</h3>
+<div>
+	<div class="item-sin-flex">Item 1</div>
+	<div class="item-sin-flex">Item 2</div>
+	<div class="item-sin-flex">Item 3</div>
+</div>
+
+<h3>display: flex</h3>
+<div class="contenedor1">
+	<div class="item ancho-md oro">Item 1</div>
+	<div class="item ancho-md oro">Item 2</div>
+	<div class="item ancho-md oro">Item 3</div>
+</div>
+
+<!-- 
+.container {
+	flex-direction: row | row-reverse | column | column-reverse;
+  } 
+-->
+
+<h3>flex-direction: column</h3>
+<pre>
+.container {
+   flex-direction: row | row-reverse | column | column-reverse;
+}
+</pre>
+<style>
+	.tomate{
+		background-color: tomato;
+	}
+</style>
+<div class="contenedor2">
+	<div class="item ancho-md tomate">Item 1</div>
+	<div class="item ancho-md tomate">Item 2</div>
+	<div class="item ancho-md tomate">Item 3</div>
+</div>
+
+
+
+
+
+
+<hr>
+<h3>flex-wrap</h3>
+<p>Los lementos se ajustan segun su ancho. No permite que se ajuste en la misma linea, hace salto de línea.</p>
+<pre>
+.container {
+   flex-wrap: nowrap | wrap | wrap-reverse;
+}
+</pre>
+<style>
+	.container-wrap{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.azul{
+		background-color: deepskyblue;
+		color: white;
+		
+	}
+</style>
+<div class="container-wrap">
+	<div class="item ancho-md azul">Item 1</div>
+	<div class="item ancho-md azul">Item 2</div>
+	<div class="item ancho-md azul">Item 3</div>
+	<div class="item ancho-md azul">Item 43</div>
+	<div class="item ancho-md azul">Item 5</div>
+	<div class="item ancho-md azul">Item 6</div>
+	<div class="item ancho-md azul">Item 7</div>
+	<div class="item ancho-md azul">Item 8</div>
+</div>
+
+
+
+
+
+
+
+
+<hr>
+<h3>flex-flow: column wrap;</h3>
+Esta es una combinación de las dos propiedades anteriores.
+<hr>
+
+
+
+
+<h3>align-items</h3>
+<p>Cómo se distribuyen los elementos en el eje principal</p>
+<pre>
+.container {
+   align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+}
+</pre>
+<style>
+	.contenedor-align-items-center{
+		display: flex;
+		align-items: center ;
+	}
+	.contenedor-align-items-top{
+		display: flex;
+		align-items: flex-start ;
+	}
+	.contenedor-align-items-end{
+		display: flex;
+		align-items: flex-end ;
+	}
+</style>
+<div class="contenedor-align-items-center">
+	<div class="item ancho-md">Item 1</div>
+	<div class="item ancho-md" style="height: 200px;">Item 2</div>
+	<div class="item ancho-md">Item 3</div>
+</div>
+<div class="contenedor-align-items-top">
+	<div class="item ancho-md">Item 1</div>
+	<div class="item ancho-md" style="height: 200px;">Item 2</div>
+	<div class="item ancho-md">Item 3</div>
+</div>
+<div class="contenedor-align-items-end">
+	<div class="item ancho-md">Item 1</div>
+	<div class="item ancho-md" style="height: 200px;">Item 2</div>
+	<div class="item ancho-md">Item 3</div>
+</div>
+
+
+<h3>justify-content: </h3>
+<p>Justificado en el eje principal</p>
+<pre>
+.container {
+   justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+}
+</pre>
+
+<style>
+	.contenedor-justify-content-right{
+		display: flex;
+		justify-content: flex-end;
+	}
+	.contenedor-justify-content-center{
+		display: flex;
+		justify-content: center;
+	}
+</style>
+<div class="contenedor-justify-content-right">
+	<div class="item ancho-md oro">Item 1</div>
+	<div class="item ancho-md oro">Item 2</div>
+	<div class="item ancho-md oro">Item 3</div>
+</div>
+<div class="contenedor-justify-content-center">
+	<div class="item ancho-md oro">Item 1</div>
+	<div class="item ancho-md oro">Item 2</div>
+	<div class="item ancho-md oro">Item 3</div>
+</div>
+<hr>
+
+
+
+
+
+<h3>gap, row-gap, column-gap</h3>
+<p>Controla los espacios entre los elementos. No tiene en cuenta los elementos de los extremos.</p>
+<pre>
+.container {
+   display: flex;
+   ...
+   gap: 10px;
+   gap: 10px 20px; /* row-gap column gap */
+   row-gap: 10px;
+   column-gap: 20px;
+}
+</pre>
+<style>
+	.contenedor-gap{
+		display: flex;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+</style>
+<div class="contenedor-gap">
+	<div class="item ancho-md oro">Item 1</div>
+	<div class="item ancho-md oro">Item 2</div>
+	<div class="item ancho-md oro">Item 3</div>
+	<div class="item ancho-md oro">Item 4</div>
+	<div class="item ancho-md oro">Item 5</div>
+	<div class="item ancho-md oro">Item 6</div>
+</div>
+
+<hr>
+
+
+
+
+
+
+</body>
+</html>

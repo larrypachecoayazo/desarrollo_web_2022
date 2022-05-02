@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flexbox Ejemplo 2</title>
+	<style type="text/css">
+
+		@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+
+		h1, h2, h3{
+			font-family: 'Ubuntu', sans-serif;
+		}
+		.item{
+			background-color: #aef783;
+			margin: 5px;
+			padding: 10px;
+			font-size: 22px;
+			text-align: center;
+			color: white;
+			font-family:  'Ubuntu', sans-serif;
+			/* font-family: 'Titillium Web', sans-serif; */
+			font-weight: bold
+		}
+	</style>
+</head>
+<body>
+
+<h1>Flexbox: Propiedades para los hijos</h1>
+<hr>
+
+
+
+
+<style type="text/css">
+	.contenedor1{
+		display: flex;
+	}
+	.contenedor2{
+		display: flex; 
+		flex-direction: column;
+	}
+	.ancho-md{
+		width: 200px;
+	}
+	.oro{
+		background-color: gold;
+	}
+	.item-sin-flex{
+		background-color: #aef783;
+		margin: 5px;
+		padding: 10px;
+		font-size: 22px;
+		text-align: center;
+		color: white;
+		font-family:  'Ubuntu', sans-serif;
+		font-weight: bold
+	}
+
+</style>
+
+
+
+
+
+
+<h3>Order</h3>
+<p>Controla el orden en que aparecen en el contenedor flexible</p>
+<pre>
+.item {
+   order: 5; /* default is 0 */
+}
+</pre>
+<style>
+	.container-wrap{
+		display: flex;
+		
+	}
+	.azul{
+		background-color: deepskyblue;
+		color: white;
+	}
+   
+</style>
+<div class="container-wrap">
+	<div class="item ancho-md azul" style="order: 5;">Item 1</div>
+	<div class="item ancho-md azul" style="order: 4;">Item 2</div>
+	<div class="item ancho-md azul" style="order: 3;">Item 3</div>
+	<div class="item ancho-md azul" style="order: 5;">Item 4</div>
+	<div class="item ancho-md azul" style="order: 1;">Item 5</div>
+</div>
+<hr>
+
+<h3>flex-grow</h3>
+<p>Capacidad de crecimiento de un elemento. Dtermina la proporción que ocupara el elemento</p>
+<p>Si todos los artículos tienen flex-grow establecido en 1, el espacio restante en el contenedor se distribuirá por igual a todos los elementos</p>
+<pre>
+.item {
+   flex-grow: 4; /* default 0 */
+}
+</pre>
+<style>
+	.container-flex-grow{
+		display: flex;
+        gap: 10px;
+        text-align: center;
+	}
+	.tomate{
+		background-color: tomato;
+		color: white;
+	}
+    .ancho-uno{
+        flex-grow:1;
+        padding: 5px;
+    }
+    .ancho-dos{
+        flex-grow:2;
+        padding: 5px;
+    }
+    .ancho-triple{
+        flex-grow:3;
+        padding: 5px;
+    }
+</style>
+<div class="container-flex-grow">
+	<div class="tomate ancho-uno">Item 1</div>
+	<div class="tomate ancho-dos">Item 2</div>
+	<div class="tomate ancho-uno">Item 3</div>
+	<div class="tomate ancho-uno">Item 4</div>
+	<div class="tomate ancho-triple">Item 5</div>
+</div>
+<hr>
+
+
+
+<h3>flex-shrink</h3>
+<p>Determina que cantidad de espacio disponible dentro del contenedor debe ocupar el elemento</p>
+<hr>
+
+
+
+<h3>flex-basis</h3>
+<p>Tamaño predeterminado de un elemento antes de que se distribuya el espacio restante</p>
+<style>
+	.container-flex-basis{
+		display: flex;
+	}
+    .item-flex-basis{
+        background-color: coral;
+        color: white;
+        padding: 5px;
+        flex-basis: 100px;
+    }
+</style>
+<div class="container-flex-grow">
+	<div class="item-flex-basis">100px</div>
+	<div class="item-flex-basis" style="flex-grow: 1;">Ancho 1</div>
+	<div class="item-flex-basis" style="flex-grow: 2;">Ancho 2</div>
+	<div class="item-flex-basis">Item 4</div>
+</div>
+<p>Nota: Como el elemento 1 y 4 tienen ancho fijo, el espacio restante se distribuye entre 2 y 3</p>
+<hr>
+
+<h3>flex</h3>
+<p>Combinación de flex-grow, flex-shrink and flex-basis. </p>
+<pre>
+.item {
+   flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+}
+</pre>
+<hr>
+
+
+<h3>align-self</h3>
+<p>Anula la alineación por defecto (align-items) de un elemento individual</p>
+
+
+
+
+
